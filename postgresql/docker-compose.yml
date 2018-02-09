@@ -17,3 +17,17 @@ services:
       - db
     ports:
       - 8080:8080
+
+  pgadmin:
+    image: dpage/pgadmin4
+#    links:
+#      - db:postgres
+#    volumes:
+#      - ./pgadmin:/var/lib/pgadmin
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: agiledots@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: test1234
+
